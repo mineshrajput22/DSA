@@ -1,7 +1,10 @@
 # TypeScript DSA Practice
 
-This workspace uses strict TypeScript. Keep each algorithm or data structure in
-its own `.ts` file so completed exercises remain available for review.
+This repository is just for my personal practice of data structures and
+algorithms using strict TypeScript.
+
+Why did the developer quit DSA practice? They couldn't find the right path in
+the graph.
 
 ## First-time setup
 
