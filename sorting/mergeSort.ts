@@ -7,9 +7,9 @@ function mergeSort(arr: number[]): number[] {
 	// Split the array, sort each half recursively, then merge the results.
 	const middle = Math.floor(arr.length / 2);
 	const left = arr.slice(0, middle);
-    // console.log('left side:' + left)
+	// console.log('left side:' + left)
 	const right = arr.slice(middle);
-    // console.log('right side:' + right)
+	// console.log('right side:' + right)
 
 	return merge(mergeSort(left), mergeSort(right));
 }
