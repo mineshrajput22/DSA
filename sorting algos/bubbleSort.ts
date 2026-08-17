@@ -1,9 +1,25 @@
+/**
+ * Bubble Sort Algorithm
+ * 
+ * Definition: A simple sorting algorithm that repeatedly steps through the list, 
+ * compares adjacent elements and swaps them if they are in the wrong order.
+ * 
+ * How it works:
+ * The pass through the list is repeated until the list is sorted. With each pass,
+ * the largest unsorted element "bubbles up" to its correct position at the end of the array.
+ */
 function bubbleSort(arr: number[]): number[] {
-	// Each pass moves the largest unsorted value to the end of the array.
+	// Outer loop handles the number of passes. In the worst case, we need arr.length passes.
 	for (let i = 0; i < arr.length; i++) {
+		// Keep track of whether any swaps happened in this pass.
+		// If no swaps occur, the array is already sorted, and we can stop early.
 		let swapped = false;
-		// The last i values are already sorted, so they can be skipped.
+		
+		// Inner loop performs the actual comparisons and swaps.
+		// After each pass 'i', the last 'i' elements are already in their correct sorted positions,
+		// so we only need to iterate up to arr.length - i - 1.
 		for (let j = 0; j < arr.length - i - 1; j++) {
+			// Compare adjacent elements: if the current element is greater than the next, swap them.
 			if (arr[j]! > arr[j + 1]!) {
 				let temp = arr[j];
 				arr[j] = arr[j + 1]!;
@@ -12,12 +28,14 @@ function bubbleSort(arr: number[]): number[] {
 			}
 		}
 
-		// No swaps means the remaining values are already in order.
+		// Optimization: If no elements were swapped during the inner loop, 
+		// it means the array is completely sorted. We can break out of the outer loop.
 		if (!swapped) {
 			break;
 		}
 	}
 
+	// Return the sorted array.
 	return arr;
 }
 
