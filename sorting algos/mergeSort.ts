@@ -1,6 +1,12 @@
 /**
  * Returns the values in sorted order by recursively sorting and merging two halves.
  * Time: O(n log n). Space: O(n). Does not mutate the input. Not stable as written.
+ *
+ * Pseudocode:
+ * 1. If there are 0 or 1 numbers, they are already sorted; return them.
+ * 2. Split the array into two halves.
+ * 3. Sort each half using these same steps.
+ * 4. Combine the sorted halves using the merge steps below.
  */
 function mergeSort(arr: number[]): number[] {
 	if (arr.length <= 1) {
@@ -14,7 +20,15 @@ function mergeSort(arr: number[]): number[] {
 	return merge(mergeSort(left), mergeSort(right));
 }
 
-/** Merges two sorted arrays while preserving ascending order. */
+/**
+ * Merges two sorted arrays while preserving ascending order.
+ *
+ * Pseudocode:
+ * 1. Compare the next unused number from each half.
+ * 2. Add the smaller one to the result (take the right one if equal).
+ * 3. Repeat until one half has no numbers left.
+ * 4. Add all leftover numbers from the other half and return the result.
+ */
 function merge(left: number[], right: number[]) {
 	let result: number[] = [];
 	let leftIndex = 0;

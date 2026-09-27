@@ -1,6 +1,13 @@
 /**
  * Returns the values in sorted order using the final value as each partition's pivot.
  * Average time: O(n log n); worst-case time: O(n^2). Space: O(n). Not stable.
+ *
+ * Pseudocode:
+ * 1. If there are 0 or 1 numbers, they are already sorted; return them.
+ * 2. Pick the last number as the pivot (the number to compare against).
+ * 3. Put smaller numbers on the left; all other numbers on the right.
+ * 4. Sort both groups using these same steps.
+ * 5. Join the sorted left group, the pivot, and the sorted right group.
  */
 function quickSort(arr: number[]): number[] {
 	// A partition with at most one value is already sorted.

@@ -1,6 +1,12 @@
 /**
  * Sorts the array in place by inserting each value into the sorted prefix.
  * Time: O(n) best case and O(n^2) average/worst case. Space: O(1). Stable.
+ *
+ * Pseudocode:
+ * 1. Start with the second number; the first is already a sorted group.
+ * 2. Save the current number. Move bigger numbers on its left one spot right.
+ * 3. Put the saved number in the gap. Repeat for each remaining number.
+ * 4. Return the sorted array.
  */
 function insertionSort(arr: number[]): number[] {
 	for (let i = 1; i < arr.length; i++) {

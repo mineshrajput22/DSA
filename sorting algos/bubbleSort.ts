@@ -1,6 +1,12 @@
 /**
  * Sorts the array in place by repeatedly swapping adjacent out-of-order values.
  * Time: O(n) best case and O(n^2) average/worst case. Space: O(1). Stable.
+ *
+ * Pseudocode:
+ * 1. Compare neighboring numbers; swap them if the left one is bigger.
+ * 2. After each pass, the biggest remaining number is in its final place.
+ * 3. Repeat, skipping the sorted end. Stop if no swaps happen.
+ * 4. Return the sorted array.
  */
 function bubbleSort(arr: number[]): number[] {
 	for (let i = 0; i < arr.length; i++) {

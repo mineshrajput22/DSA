@@ -1,6 +1,12 @@
 /**
  * Sorts the array in place by repeatedly selecting the smallest unsorted value.
  * Time: O(n^2) in all cases. Space: O(1). Not stable.
+ *
+ * Pseudocode:
+ * 1. Start at the first position and find the smallest number from there onward.
+ * 2. Swap that number into the current position.
+ * 3. Move one position right and repeat until only one number remains.
+ * 4. Return the sorted array.
  */
 function selectionSort(arr: number[]): number[] {
 	for (let i = 0; i < arr.length - 1; i++) {
