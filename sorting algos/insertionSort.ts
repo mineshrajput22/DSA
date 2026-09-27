@@ -14,10 +14,7 @@ function insertionSort(arr: number[]): number[] {
 		let j = i - 1;
 
 		// Shift larger prefix values right to open the insertion position.
-		while (j >= 0) {
-			if (arr[j]! <= currentElement) {
-				break;
-			}
+		 while(j >= 0 && arr[j]! > currentElement){
 
 			arr[j + 1] = arr[j]!;
 			j--;
